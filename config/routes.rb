@@ -1,5 +1,7 @@
 Rainforest4::Application.routes.draw do
 
+  get "users/new"
+  get "users/create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -13,7 +15,8 @@ Rainforest4::Application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-   resources :products
+     resources :products
+     resources :users, :only => [:new, :create]
 
   # Example resource route with options:
   #   resources :products do
