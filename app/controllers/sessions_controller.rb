@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
   		session[:user_id] = user.id
   		redirect_to products_url, :notice => "Logged In!"
   	else
+  		flash.now[:alert] = "Invalid Email or Password"
   		render "new"
   	end
   end
